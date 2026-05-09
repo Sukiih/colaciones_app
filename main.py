@@ -4,6 +4,7 @@ from funciones import ver_stock
 from funciones import agregar_stock
 from funciones import quitar_stock
 from funciones import generar_colaciones
+from funciones import generar_semana
 
 
 with open("stock.json", "r") as archivo:
@@ -31,7 +32,7 @@ elif opcion == "3":
     quitar_stock(stock)
 
 elif opcion == "4":
-    generar_colaciones(stock)
+    generar_semana(stock)
 
 elif opcion == "5":
     print("Adios")

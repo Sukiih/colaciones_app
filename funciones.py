@@ -100,10 +100,30 @@ def generar_colaciones(stock):
     stock["bebidas"][bebida] -= 1
     stock["extras"][extra] -= 1
 
-    print("\nColacion generada:")
-    print(snack)
-    print(pan)
-    print(bebida)
-    print(extra)
-
     guardar_stock(stock)
+
+    return {
+        "snack": snack,
+        "pan": pan,
+        "bebida": bebida,
+        "extra": extra
+    }
+
+def generar_semana(stock):
+    dias =[
+        "lunes",
+        "martes",
+        "miercoles",
+        "jueves",
+        "viernes"
+
+    ]
+
+    for dia in dias:
+        colacion = generar_colaciones(stock)
+        print("\n" + dia.upper())
+        print("Snack:", colacion["snack"])
+        print("Pan:", colacion["pan"])
+        print("Bebida:", colacion["bebida"])
+        print("Extra:", colacion["extra"])
+    

@@ -65,34 +65,60 @@ def generar_colaciones(stock):
 
     #snacks = list(stock["snacks"].keys()) se reemplaza por lista para evitar usar algo sin stock
     snacks = []
+    pesos_snacks = []
     for producto, cantidad in stock["snacks"].items():
         if cantidad > 0:
             snacks.append(producto)
+            pesos_snacks.append(cantidad)
     #panes = list(stock["panes"].keys())
     panes = []
+    pesos_panes = []
     for producto, cantidad in stock["panes"].items():
         if cantidad > 0:
             panes.append(producto)
+            pesos_panes.append(cantidad)
     #bebidas = list(stock["bebidas"].keys())
     bebidas = []
+    pesos_bebidas = []
     for producto, cantidad in stock["bebidas"].items():
         if cantidad > 0:
             bebidas.append(producto)
+            pesos_bebidas.append(cantidad)
     #extras = list(stock["extras"].keys())
     extras = []
+    pesos_extras = []
     for producto, cantidad in stock["extras"].items():
         if cantidad > 0:
             extras.append(producto)
+            pesos_extras.append(cantidad)
 
     if len(snacks) == 0 or len(panes) == 0 or len(bebidas) == 0 or len(extras) == 0:
         print("No hay stock suficiente para generar una colacion")
         return
 
-    snack = random.choice(snacks)
-    pan = random.choice(panes)
-    bebida = random.choice(bebidas)
-    extra = random.choice(extras)
+    snack = random.choices(
+        snacks,
+        weights=pesos_snacks,
+        k=1
+    )[0]
 
+    pan = random.choices(
+        panes,
+        weights=pesos_panes,
+        k=1
+    )[0]
+
+    bebida = random.choices(
+        bebidas,
+        weights=pesos_bebidas,
+        k=1
+    )[0]
+
+    extra = random.choices(
+        extras,
+        weights=pesos_extras,
+        k=1
+    )[0]
     #descontamos stock
 
     stock["snacks"][snack] -= 1

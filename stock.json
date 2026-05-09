@@ -1,0 +1,30 @@
+{
+    "snacks": {
+        "carioca": 24,
+        "serranitas": 20,
+        "nik": 6,
+        "niza": 8
+    },
+    "panes": {
+        "pan con queso": 12,
+        "pan con jamon": 10,
+        "pan con salame": 8,
+        "pan con pasta de salame": 6
+    },
+    "bebidas": {
+        "jugo naranja": 12,
+        "jugo pi\u00c3\u00b1a": 10,
+        "jugo limon": 8,
+        "jugo durazno": 6,
+        "jugo pera": 4,
+        "jugo manzana": 2,
+        "fanta": 5
+    },
+    "extras": {
+        "chocman": 20,
+        "stick queso": 10,
+        "cubanitos": 22,
+        "chirlito morado": 12,
+        "chirlito rosa": 14
+    }
+}
